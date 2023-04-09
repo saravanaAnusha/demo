@@ -15,4 +15,26 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <plugins>
+      <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${plugin.findbugs-maven-plugin.version}</version>
+                <configuration>
+                    <excludeFilterFile>${project.basedir}/exclude-findbugs.xml</excludeFilterFile>
+                    <failOnError>false</failOnError>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>findbugs</goal>
+                        </goals>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                            <skip>true</skip>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+  </plugins>
 </project>
